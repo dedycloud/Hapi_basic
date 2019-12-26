@@ -2,7 +2,7 @@ import {getRepository} from "typeorm";
 import Boom from "@hapi/boom"
 
 import Location from "../models/location.model";
-// const Bcrypt = require('bcrypt');
+const Bcrypt = require('bcryptjs');
 class LocationService {
 
 
