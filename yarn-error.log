@@ -1,0 +1,62 @@
+Arguments: 
+  E:\academy\Hapi\node_modules\node\bin\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js add @babel/preset-env --dev
+
+PATH: 
+  E:\academy\Hapi\node_modules\.bin;C:\Python27\;C:\Python27\Scripts;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files\Git\cmd;C:\Program Files\Java\jdk1.8.0_201\bin;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\PostgreSQL\10\bin;C:\maven\bin;C:\ProgramData\chocolatey\bin;C:\Program Files (x86)\Yarn\bin\;C:\Users\Enigmacamp\AppData\Local\Android\Sdk\platform-tools;C:\Program Files\nodejs\;C:\Users\Enigmacamp\AppData\Local\Microsoft\WindowsApps;C:\Exercism;C:\Users\Enigmacamp\AppData\Local\Yarn\bin;C:\Users\Enigmacamp\AppData\Local\Programs\Microsoft VS Code\bin;C:\flutter\bin;C:\Users\Enigmacamp\AppData\Roaming\npm
+
+Yarn version: 
+  1.19.2
+
+Node version: 
+  13.3.0
+
+Platform: 
+  win32 x64
+
+Trace: 
+  Error: EPERM: operation not permitted, unlink 'E:\academy\Hapi\node_modules\node\bin\node.exe'
+
+npm manifest: 
+  {
+    "name": "Hapi",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+      "prestart": "npx babel src --out-dir dist",
+      "start": "node dist/server",
+      "prestart:dev": "npx babel src --out-dir dist",
+      "start:dev": "nodemon dist/server",
+      "pretest": "cross-env NODE_ENV=test",
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+      "@hapi/hapi": "^18.4.0",
+      "esm": "^3.2.25",
+      "msql": "^1.0.3",
+      "node": "^13.3.0",
+      "typeorm": "^0.2.21"
+    },
+    "devDependencies": {
+      "@babel/cli": "^7.7.7",
+      "@babel/core": "^7.7.7",
+      "@babel/node": "^7.7.7",
+      "@babel/plugin-syntax-dynamic-import": "^7.7.4",
+      "@babel/plugin-transform-modules-commonjs": "^7.7.5",
+      "@babel/plugin-transform-runtime": "^7.7.6",
+      "@babel/polyfill": "^7.7.0",
+      "@babel/runtime": "^7.7.7",
+      "dotenv": "^8.2.0",
+      "path": "^0.12.7",
+      "nodemon": "^2.0.2"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
