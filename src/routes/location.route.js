@@ -19,12 +19,13 @@ const LocationRouter = [
 
             },
             validate:{
-                payload: {
+                payload:Joi.object({
                     name: Joi.string().min(1).max(140).required(),
                     address: Joi.string().max(14).required()
                     // date: Joi.date().required()
 
                 }
+                )
             }
         }
 
