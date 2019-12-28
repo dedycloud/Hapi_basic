@@ -17,6 +17,19 @@ const LoginRoute =[{
         handler:(req )=>{
             return loginService.login(req.payload);
         }
+    },
+    {
+        method: 'GET',
+        path: '/login/{id}',
+        config: {
+            auth:'simple',
+            handler: async (req, h) => {
+                const {params} = req;
+                const login = await loginService.findByUsername(params.id);
+                return login;
+
+            }
+        }
     }
 
 ]

@@ -63,11 +63,11 @@ var LocationRouter = [{
       return handler;
     }(),
     validate: {
-      payload: {
+      payload: _joi["default"].object({
         name: _joi["default"].string().min(1).max(140).required(),
         address: _joi["default"].string().max(14).required() // date: Joi.date().required()
 
-      }
+      })
     }
   }
 }, {
@@ -127,7 +127,8 @@ var LocationRouter = [{
           while (1) {
             switch (_context3.prev = _context3.next) {
               case 0:
-                location = req.payload;
+                location = req.payload; //   console.log(location.id)
+
                 _context3.next = 3;
                 return locationService.updateLocation(location);
 

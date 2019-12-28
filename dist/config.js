@@ -13,10 +13,14 @@ var _path = require("path");
 
 function configure() {
   if (process.env.NODE_ENV === 'test') {
+    console.log("DB TEST");
+
     _dotenv["default"].config({
-      path: (0, _path.resolve)('test.env')
+      path: (0, _path.resolve)("test.env")
     });
   } else {
+    console.log("DB run");
+
     _dotenv["default"].config();
   }
 
@@ -25,5 +29,5 @@ function configure() {
     process.exit(1);
   }
 
-  process.env.BASE_PATH = (0, _path.dirname)((0, _path.resolve)('api.js'));
+  process.env.BASE_PATH = (0, _path.dirname)((0, _path.resolve)('index.js'));
 }

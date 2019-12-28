@@ -13,9 +13,12 @@ var _package = _interopRequireDefault(require("../schema/package.schema"));
 
 var _transition = _interopRequireDefault(require("../schema/transition.schema"));
 
+var _login = _interopRequireDefault(require("../schema/login.schema"));
+
 var _default = {
   LocationSchema: _location["default"],
   PackageSchema: _package["default"],
-  TransitionSchema: _transition["default"]
+  TransitionSchema: _transition["default"],
+  LoginSchema: _login["default"]
 };
 exports["default"] = _default;

@@ -17,9 +17,9 @@ describe('find location',  () => {
     let server;
     beforeEach(async () => {
         server = await init();
-        await locationService.locationRepository().query('SET FOREIGN_KEY_CHECKS=0')
+     //   await locationService.locationRepository().query('SET FOREIGN_KEY_CHECKS=0')
         await locationService.locationRepository().clear();
-        await locationService.locationRepository().query('SET FOREIGN_KEY_CHECKS=1')
+       // await locationService.locationRepository().query('SET FOREIGN_KEY_CHECKS=1')
 
     });
 
@@ -31,6 +31,23 @@ describe('find location',  () => {
             name
         })
     });
+
+    afterEach(async () => {
+        if(server){
+             server.close();
+        }
+    });
+});
+
+describe('create location ',()=>{
+    let server;
+    beforeEach(async () => {
+        server = await init();
+           await locationService.locationRepository().query('SET FOREIGN_KEY_CHECKS=0')
+        await locationService.locationRepository().clear();
+         await locationService.locationRepository().query('SET FOREIGN_KEY_CHECKS=1')
+
+    });
     it('should return location save', async () => {
         let saveLocation=[];
         for (let i = 0; i < dataLocations.length ; i++) {
@@ -39,4 +56,10 @@ describe('find location',  () => {
         const location = await locationService.findAllLocation();
         expect(location).toHaveLength(saveLocation.length);
     });
-});
+
+    afterEach(async () => {
+        if(server){
+            server.close();
+        }
+    });
+})

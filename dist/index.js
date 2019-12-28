@@ -19,6 +19,8 @@ var _routes = _interopRequireDefault(require("./routes"));
 
 var _config = _interopRequireDefault(require("./config"));
 
+var _auth = _interopRequireDefault(require("./config/auth.validate"));
+
 process.on('unhandledRejection', function (err) {
   console.log(err);
   process.exit(1);
@@ -44,25 +46,35 @@ _regenerator["default"].mark(function _callee() {
             port: process.env.APP_PORT,
             host: process.env.APP_HOST
           });
+          _context.next = 7;
+          return server.register(require('@hapi/basic'));
+
+        case 7:
+          _context.next = 9;
+          return server.auth.strategy('simple', 'basic', {
+            validate: _auth["default"]
+          });
+
+        case 9:
           server.route(_routes["default"]);
 
           if (!connection.isConnected) {
-            _context.next = 12;
+            _context.next = 16;
             break;
           }
 
           console.log('DATABASE CONNECTED');
-          _context.next = 10;
+          _context.next = 14;
           return server.start();
 
-        case 10:
+        case 14:
           console.log("DB connection name ".concat(connection.name));
           console.log('Server ', process.env.APP_NAME, ' running on ', server.info.uri);
 
-        case 12:
+        case 16:
           return _context.abrupt("return", server.listener);
 
-        case 13:
+        case 17:
         case "end":
           return _context.stop();
       }

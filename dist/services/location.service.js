@@ -21,7 +21,8 @@ var _boom = _interopRequireDefault(require("@hapi/boom"));
 
 var _location = _interopRequireDefault(require("../models/location.model"));
 
-// const Bcrypt = require('bcrypt');
+var Bcrypt = require('bcryptjs');
+
 var LocationService =
 /*#__PURE__*/
 function () {
@@ -209,9 +210,13 @@ function () {
 
       return deleteLocation;
     }() // async beforeCreate(password){
-    //
+    // const salt = bcrypt.genSaltSync();
+    // return await bcrypt.hashSync(password,salt)
     // }
     //
+    // async validPassword(password,checkPassword){
+    //     return await bcrypt.compareSync(password,checkPassword)
+    // }
     // async seacrh(payload){
     //     if(payload.email){
     //         return this.findByemail(payload.email);

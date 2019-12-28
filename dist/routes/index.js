@@ -13,6 +13,8 @@ var _package = _interopRequireDefault(require("./package.route"));
 
 var _transition = _interopRequireDefault(require("./transition.route"));
 
-var _default = [].concat(_package["default"], _location["default"]);
+var _login = _interopRequireDefault(require("./login.route"));
+
+var _default = [].concat(_package["default"], _location["default"], _login["default"]);
 
 exports["default"] = _default;

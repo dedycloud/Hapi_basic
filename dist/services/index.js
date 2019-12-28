@@ -23,9 +23,17 @@ Object.defineProperty(exports, "TransitionService", {
     return _transition["default"];
   }
 });
+Object.defineProperty(exports, "LoginService", {
+  enumerable: true,
+  get: function get() {
+    return _login["default"];
+  }
+});
 
 var _location = _interopRequireDefault(require("./location.service"));
 
 var _package = _interopRequireDefault(require("./package.service"));
 
 var _transition = _interopRequireDefault(require("./transition.service"));
+
+var _login = _interopRequireDefault(require("./login.service"));
