@@ -35,6 +35,7 @@ const LocationRouter = [
         method: 'GET',
         path: '/location',
         config: {
+            // auth:'simple',
             handler: async (req, h) => {
                 const location = await locationService.findAllLocation();
                 if (!location) {
@@ -64,6 +65,7 @@ const LocationRouter = [
         method: 'GET',
         path: '/location/{id}',
         config: {
+
             handler: async (req, h) => {
                 const {params} = req;
                 const locationById = await locationService.findLocationById(params.id);

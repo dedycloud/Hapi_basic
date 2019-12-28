@@ -13,8 +13,9 @@ const dataLocations =[ {
     name: "dedys",
     address: "jl.abdurahman"
 }]
+let server;
+
 describe('find location',  () => {
-    let server;
     beforeEach(async () => {
         server = await init();
      //   await locationService.locationRepository().query('SET FOREIGN_KEY_CHECKS=0')
@@ -40,17 +41,16 @@ describe('find location',  () => {
 });
 
 describe('create location ',()=>{
-    let server;
     beforeEach(async () => {
-        server = await init();
-           await locationService.locationRepository().query('SET FOREIGN_KEY_CHECKS=0')
+      //  server = await init();
+       //    await locationService.locationRepository().query('SET FOREIGN_KEY_CHECKS=0')
         await locationService.locationRepository().clear();
-         await locationService.locationRepository().query('SET FOREIGN_KEY_CHECKS=1')
+     //    await locationService.locationRepository().query('SET FOREIGN_KEY_CHECKS=1')
 
     });
     it('should return location save', async () => {
         let saveLocation=[];
-        for (let i = 0; i < dataLocations.length ; i++) {
+        for (let i = 1; i < dataLocations.length ; i++) {
             saveLocation.push(await locationService.locationRepository().save(dataLocations[i]))
         }
         const location = await locationService.findAllLocation();
