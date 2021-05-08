@@ -30,7 +30,7 @@
     "esm": "^3.2.25",
     "mysql": "^2.17.1",
     "node": "^13.3.0",
-    "typeorm": "^0.2.21",
+    "typeorm": "^0.2.25",
     "@hapi/basic": "latest",
     "sqlite": "^3.0.3"
   },
